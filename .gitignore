@@ -1,0 +1,5 @@
+# VS Code
+.vscode/*.*
+
+# Exclude personal API key.
+Scripts/api.key

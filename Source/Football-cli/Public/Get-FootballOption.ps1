@@ -23,29 +23,29 @@ function Get-FootballOption {
     # Config is a mix of default and user settings.
     # User settings, when present, override default.
 
-    [string]$defaultPath = "$PSScriptRoot\..\Resources\config.default.json"
-    [string]$currentPath = "$PSScriptRoot\..\Resources\config.current.json"
+    [string]$defaultPath = Get-FootballOptionPath -OptionSet 'default'
+    [string]$userPath = Get-FootballOptionPath -OptionSet 'user'
 
     [hashtable]$default = Get-Content -Path $defaultPath -Raw | ConvertFrom-Json | ConvertFrom-PSCustomObject
-    [hashtable]$current = @{}
+    [hashtable]$user = @{}
 
 
     # File only exists after first option is changed from default.
-    if (Test-Path -Path $currentPath) {
+    if (Test-Path -Path $userPath) {
 
-        [hashtable]$current = Get-Content -Path $currentPath -Raw | ConvertFrom-Json | ConvertFrom-PSCustomObject
+        [hashtable]$user = Get-Content -Path $userPath -Raw | ConvertFrom-Json | ConvertFrom-PSCustomObject
     }
 
 
     # Add missing options to user set.
     foreach ($key in $default.Keys) {
 
-        if ( -not ($current.containsKey($key)) ) {
+        if ( -not ($user.containsKey($key)) ) {
 
-            $current[$key] = $default[$key]
+            $user[$key] = $default[$key]
         }
     }
 
 
-    Write-Output $current
+    Write-Output $user
 }

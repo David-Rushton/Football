@@ -3,7 +3,7 @@
 
 # Exclude personal API key.
 Scripts/api.key
-Source/Football-cli/Resources/config.current.json
+Source/Football-cli/Resources/config.user.json
 
 # Template PowerShell Cmdlet.
 Source/Football-cli/Resources/Template.Cmdlet.txt

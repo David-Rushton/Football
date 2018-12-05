@@ -70,7 +70,8 @@ Description = 'Command line access to football.  Back.  Of.  The.  Net.'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
-    'Get-FootballOption'
+    'Get-FootballOption',
+    'Set-FootballOption'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.

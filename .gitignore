@@ -7,3 +7,7 @@ Source/Football-cli/Resources/config.user.json
 
 # Template PowerShell Cmdlet.
 Source/Football-cli/Resources/Template.Cmdlet.txt
+
+
+# Any work in progress files.
+**/wip.*

@@ -1,13 +1,14 @@
 # VS Code
 .vscode/*.*
 
-# Exclude personal API key.
-Scripts/api.key
+# Exclude keys.
+**/*.key
+
+# Exclude test config.
 Source/Football-cli/Resources/config.user.json
 
 # Template PowerShell Cmdlet.
 Source/Football-cli/Resources/Template.Cmdlet.txt
-
 
 # Any work in progress files.
 **/wip.*

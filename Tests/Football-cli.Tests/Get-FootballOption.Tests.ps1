@@ -30,8 +30,8 @@ Describe 'Get-FootballOption Tests' {
                     one = "one"
                     two = "two"
                 }
-                $actual['one'] | Should Be 'one'
-                $actual['two'] | Should Be 'two'
+                $actual['one'] | Should Be $expected['one']
+                $actual['two'] | Should Be $expected['two']
 
             }
         }

@@ -15,7 +15,7 @@
 #>
 function Get-ApiContent {
     [CmdletBinding()]
-    [OutputType([string])]
+    [OutputType([PSCustomObject])]
 
     param(
 
@@ -48,12 +48,12 @@ function Get-ApiContent {
 
 
         # Add API key to params, if set.
-        if ($options.contains('apiKey')) {
+        if ($options['apiKey'] -ne '') {
             $params += @{ Headers = @{'X-Auth-Token' = $options['apiKey']} }
         }
 
         # Add proxy server, if set.
-        if ($options.contains('proxy')) {
+        if ($options['proxy'] -ne '') {
             $params += @{ Proxy = $options['proxy'] }
         }
     }

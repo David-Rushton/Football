@@ -52,5 +52,20 @@ Describe 'Get-FootballOption Tests' {
             }
         }
 
+
+        context 'Default settings and values' {
+
+            Mock Test-Path { $false } -ModuleName 'Football-cli'
+
+            It 'Should return default settings and values' {
+
+                $actual = Get-FootballOption
+
+                $actual.Count     | Should Be 2
+                $actual['apiKey'] | Should Be ''
+                $actual['proxy']  | Should Be ''
+            }
+        }
+
     }
 }

@@ -65,6 +65,7 @@ function Get-ApiContent {
             try {
 
                 $params.Uri = "$root$currentUri"
+                Write-Verbose "Calling API: $($params.Uri)."
                 $html = Invoke-WebRequest @params
 
                 if ($html.statusCode -ne 200) {

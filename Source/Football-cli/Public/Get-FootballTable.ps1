@@ -37,7 +37,8 @@ function Get-FootballTable {
         [parameter(
             Mandatory,
             ValueFromPipeline,
-            ValueFromPipelineByPropertyName
+            ValueFromPipelineByPropertyName,
+            HelpMessage='Which league do you want to view?'
         )]
         [ValidateSet(
             'The Premier League', 'Premier League', 'Premier', 'Prem', 'PL',

@@ -72,6 +72,7 @@ Description = 'Command line access to football.  Back.  Of.  The.  Net.'
 FunctionsToExport = @(
     'Get-FootballOption',
     'Set-FootballOption',
+    'Get-FootballMatch',
     'Get-FootballTable'
 )
 

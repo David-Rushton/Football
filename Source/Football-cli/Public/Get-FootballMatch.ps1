@@ -57,6 +57,18 @@ function Get-FootballMatch {
     Set-StrictMode -Version 'Latest'
 
 
+    # Convert competition name to API short code, if required.
+    if (@('PL', 'ELC', 'CL') -notcontains $Competition) {
+
+        switch -Wildcard ($Competition) {
+            '*prem*'            { $Competition = 'PL'  ; break }
+            '*Championship*'    { $Competition = 'ELC' ; break }
+            '*Champions*'       { $Competition = 'CL'  ; break }
+            default             { Write-Error "Competition not supported: $Competition." }
+        }
+    }
+
+
     # We'll need the current match day if an relative has been provided.
     if ($MatchDay -isnot [int]) {
 

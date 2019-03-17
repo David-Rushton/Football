@@ -50,11 +50,13 @@ function Get-ApiContent {
         # Add API key to params, if set.
         if ($options['apiKey'] -ne '') {
             $params += @{ Headers = @{'X-Auth-Token' = $options['apiKey']} }
+            Write-Verbose "API key added: $( $params.Headers.'X-Auth-Token' )."
         }
 
         # Add proxy server, if set.
         if ($options['proxy'] -ne '') {
             $params += @{ Proxy = $options['proxy'] }
+            Write-Verbose "Proxy server set: $( $params.Proxy )."
         }
     }
 
